@@ -5,6 +5,7 @@
  */
 package Interfaces;
 
+import Entities.Congreso;
 import Entities.Profesor;
 import Entities.Proyecto;
 import Entities.Publicacion;
@@ -30,4 +31,6 @@ public interface IPersistencia
     boolean agregar(Publicacion publicacion);
     
     boolean agregar(Revista revista);
+    
+    boolean agregar (Congreso congreso);
 }

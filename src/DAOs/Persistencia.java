@@ -5,10 +5,12 @@
  */
 package DAOs;
 
+import Entities.Congreso;
 import Entities.Profesor;
 import Entities.Proyecto;
 import Entities.Publicacion;
 import Entities.Revista;
+import Interfaces.ICongresosDAO;
 import Interfaces.IPersistencia;
 import Interfaces.IProfesoresDAO;
 import Interfaces.IProyectosDAO;
@@ -27,6 +29,7 @@ public class Persistencia implements IPersistencia
     private IProfesoresDAO profesoresDAO;
     private IPublicacionesDAO publicacionesDAO;
     private IRevistasDAO revistasDAO;
+    private ICongresosDAO congresosDAO;
 
     public Persistencia() 
     {
@@ -85,6 +88,12 @@ public class Persistencia implements IPersistencia
     public boolean agregar(Revista revista) 
     {
         return revistasDAO.agregar(revista);
+    }
+
+    @Override
+    public boolean agregar(Congreso congreso) 
+    {
+        return congresosDAO.agregar(congreso);
     }
     
 }

@@ -6,6 +6,7 @@
 package DAOs;
 
 import Interfaces.IConexionBD;
+import Interfaces.ICongresosDAO;
 import Interfaces.IProfesoresDAO;
 import Interfaces.IProyectosDAO;
 import Interfaces.IPublicacionesDAO;
@@ -37,5 +38,10 @@ public class DAOsFactory
     public static IRevistasDAO crearRevistasDAO()
     {
         return new RevistasDAO(conexionBD);
+    }
+    
+    public static ICongresosDAO crearCongresosDAO()
+    {
+        return new CongresosDAO(conexionBD);
     }
 }
