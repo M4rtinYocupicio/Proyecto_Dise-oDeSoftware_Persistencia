@@ -31,7 +31,7 @@ public class ProfesoresDAO implements IProfesoresDAO
     
     private MongoCollection<Profesor> getColeccion()
     {
-        return this.baseDatos.getCollection("proyectos", Profesor.class);
+        return this.baseDatos.getCollection("profesores", Profesor.class);
     }
     
     @Override
