@@ -79,19 +79,19 @@ public class Persistencia implements IPersistencia
     }
 
     @Override
-    public boolean agregar(Publicacion publicacion) 
+    public boolean agregarPublicacion(Publicacion publicacion) 
     {
         return publicacionesDAO.agregar(publicacion);
     }
 
     @Override
-    public boolean agregar(Revista revista) 
+    public boolean agregarRevista(Revista revista) 
     {
         return revistasDAO.agregar(revista);
     }
 
     @Override
-    public boolean agregar(Congreso congreso) 
+    public boolean agregarCongreso(Congreso congreso) 
     {
         return congresosDAO.agregar(congreso);
     }

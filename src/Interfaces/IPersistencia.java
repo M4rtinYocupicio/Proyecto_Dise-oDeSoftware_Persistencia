@@ -28,9 +28,9 @@ public interface IPersistencia
     List<Profesor> consultarTodosProfesores();
     Profesor consultarProfesores(ObjectId idProfesor);
     
-    boolean agregar(Publicacion publicacion);
+    boolean agregarPublicacion(Publicacion publicacion);
     
-    boolean agregar(Revista revista);
+    boolean agregarRevista(Revista revista);
     
-    boolean agregar (Congreso congreso);
+    boolean agregarCongreso(Congreso congreso);
 }
