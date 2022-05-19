@@ -28,7 +28,7 @@ public class RevistasDAO implements IRevistasDAO
     
     private MongoCollection<Revista> getColeccion()
     {
-        return this.baseDatos.getCollection("publicacion", Revista.class);
+        return this.baseDatos.getCollection("publicaciones", Revista.class);
     }
     
     @Override
