@@ -33,7 +33,11 @@ public class Persistencia implements IPersistencia
 
     public Persistencia() 
     {
-        proyectosDAO=DAOsFactory.crearProyectoDAO();
+        this.proyectosDAO=DAOsFactory.crearProyectoDAO();
+        this.profesoresDAO=DAOsFactory.crearProfesoresDAO();
+        this.publicacionesDAO=DAOsFactory.crearPublicacionesDAO();
+        this.revistasDAO=DAOsFactory.crearRevistasDAO();
+        this.congresosDAO=DAOsFactory.crearCongresosDAO();
     }
 
     @Override

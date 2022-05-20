@@ -28,15 +28,23 @@ public class PublicacionesDAO implements IPublicacionesDAO
     
     private MongoCollection<Publicacion> getColeccion()
     {
-        return this.baseDatos.getCollection("publicacion", Publicacion.class);
+        return this.baseDatos.getCollection("publicaciones", Publicacion.class);
     }
     
     @Override
     public boolean agregar(Publicacion publicacion) 
     {
         MongoCollection<Publicacion> coleccion = this.getColeccion();
-        coleccion.insertOne(publicacion);
-        return true;
+        try
+        {
+            coleccion.insertOne(publicacion);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        
     }
     
 }

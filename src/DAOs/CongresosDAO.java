@@ -15,27 +15,33 @@ import com.mongodb.client.MongoDatabase;
  *
  * @author marti
  */
-public class CongresosDAO implements ICongresosDAO
-{
+public class CongresosDAO implements ICongresosDAO {
+
     private IConexionBD conexion;
     private MongoDatabase baseDatos;
 
-    public CongresosDAO(IConexionBD conexion) 
-    {
+    public CongresosDAO(IConexionBD conexion) {
         this.conexion = conexion;
         this.baseDatos = this.conexion.crearConexion();
     }
-    
-    private MongoCollection<Congreso> getColeccion()
-    {
-        return this.baseDatos.getCollection("publicacion", Congreso.class);
+
+    private MongoCollection<Congreso> getColeccion() {
+        return this.baseDatos.getCollection("publicaciones", Congreso.class);
     }
+
     @Override
-    public boolean agregar(Congreso congreso) 
-    {
+    public boolean agregar(Congreso congreso) {
         MongoCollection<Congreso> coleccion = this.getColeccion();
-        coleccion.insertOne(congreso);
-        return true;
+        try 
+        {
+            coleccion.insertOne(congreso);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+
     }
-    
+
 }

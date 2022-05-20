@@ -38,8 +38,17 @@ public class ProfesoresDAO implements IProfesoresDAO
     public boolean agregar(Profesor profesor) 
     {
         MongoCollection<Profesor> coleccion = this.getColeccion();
-        coleccion.insertOne(profesor);
-        return true;
+        try
+        {   
+            System.out.println("Error" +profesor.toString());
+            coleccion.insertOne(profesor);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        
     }
 
     @Override
