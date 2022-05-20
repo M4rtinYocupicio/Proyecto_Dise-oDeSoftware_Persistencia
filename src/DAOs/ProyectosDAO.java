@@ -39,10 +39,17 @@ public class ProyectosDAO implements IProyectosDAO
     @Override
     public boolean agregar(Proyecto proyecto) 
     {
-        //TODO: MANEJAS POSIBLES EXCEPCIONES...
         MongoCollection<Proyecto> coleccion = this.getColeccion();
-        coleccion.insertOne(proyecto);
-        return true;
+        try
+        {
+            coleccion.insertOne(proyecto);
+            return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+        
     }
 
     @Override
